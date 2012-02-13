@@ -100,8 +100,6 @@ class Config {
             $language =  $_SESSION['usrLang'];
         }
         else{
-            //$jsonData = json_decode(file_get_contents('http://api.ipinfodb.com/v3/ip-country/?key='.$this->config['GEOKEY'].'&ip='.$this->getIP().'&format=json'));
-            //$this->setLanguage($jsonData->countryCode);
             $jsonData = json_decode(file_get_contents('http://www.geognos.com/api/en/countries/cc/_.json'));
             $this->setLanguage($jsonData->Results);
             $language =  $this->config['OSTLANG'];
