@@ -340,8 +340,8 @@ $LANG['TEXT_INVALID_LOGIN'] = 'Login Inválido';
 // TEXT J
 // TEXT K
 // TEXT L
-$LANG['TEXT_LOGIN_VIEW_STATUS_OF_TICKET']='To view the status of a ticket, provide us with your login details below.<br/>'.
-        'If this is your first time contacting us or you\'ve lost the ticket ID, please <a href="open.php">click here</a> to open a new ticket.';
+$LANG['TEXT_LOGIN_VIEW_STATUS_OF_TICKET']='Para visualizar o status de um ticket, forneça as informações de login abaixo.<br/>'.
+        'Se este for seu primeiro contato ou se você perdeu o número do seu ticket, por favor <a href="open.php">clique aqui</a> para abrir um novo ticket.';
 $LANG['TEXT_LOG_OUT'] = 'Log Out';
 // TEXT M
 $LANG['TEXT_MESSAGE_POSTED_SUCCESSFULLY'] = 'Mensagem enviada com sucesso'; 
@@ -445,9 +445,10 @@ $LANG['TITLE_BOX_NEW_TICKET'] = 'Novo Ticket';
 $LANG['TITLE_BAR_OFFLINE'] = 'Sistema de Ticket para Suporte';
 $LANG['TITLE_MY_PREFERENCES'] = 'Minhas Preferências';
 $LANG['TITLE_OFFLINE'] = 'Sistema de ticket para Suporte está Offline';
-$LANG['TITLE_OPEN_PREVIUS_TICKET'] = 'Abrir ticket existente';
+$LANG['TITLE_OPEN_PREVIOUS_TICKET'] = 'Abrir ticket existente';
 $LANG['TITLE_CLOSED_TICKETS'] = 'Atendimentos Finalizados';
 
+$LANG['Displaying'] = 'Teste de mostrando';
 
 
 ?>

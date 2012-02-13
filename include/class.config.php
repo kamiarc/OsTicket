@@ -61,9 +61,52 @@ class Config {
 		return $this->config['isonline']?false:true;
 	}
 
-	function getLanguage(){
+    function getIP() {
+        $ip;
+        if (getenv("HTTP_CLIENT_IP"))
+            $ip = getenv("HTTP_CLIENT_IP");
+        else if(getenv("HTTP_X_FORWARDED_FOR"))
+            $ip = getenv("HTTP_X_FORWARDED_FOR");
+        else if(getenv("REMOTE_ADDR"))
+            $ip = getenv("REMOTE_ADDR");
+        else
+            $ip = "UNKNOWN";
+        return $ip;
+    }
 
-		$language =  $this->config['OSTLANG'];
+    function listLanguages($search=false){
+        $langs = array();
+        $dir = "translate";
+        if (is_dir($dir)) {
+            if ($dh = opendir($dir)) {
+                while (($file = readdir($dh)) !== false) {
+                    if(strpos($file,'.') === false) $langs[] = $file;
+                }
+                closedir($dh);
+            }
+        }
+        if($search != false){
+            if(in_array($search,$langs)){
+                return true;
+            }
+            else return false;
+        }
+        return $langs;
+    }
+
+	function getLanguage(){
+        isset($_GET['setLang']) ? ($_SESSION['usrLang'] = $_GET['setLang']) : '';
+        if(isset( $_SESSION['usrLang'] )){
+            $language =  $_SESSION['usrLang'];
+        }
+        else{
+            //$jsonData = json_decode(file_get_contents('http://api.ipinfodb.com/v3/ip-country/?key='.$this->config['GEOKEY'].'&ip='.$this->getIP().'&format=json'));
+            //$this->setLanguage($jsonData->countryCode);
+            $jsonData = json_decode(file_get_contents('http://www.geognos.com/api/en/countries/cc/_.json'));
+            $this->setLanguage($jsonData->Results);
+            $language =  $this->config['OSTLANG'];
+        }
+
 		if (!$language)
 		{
 			if(defined('OSTLANG')){ 
@@ -77,7 +120,13 @@ class Config {
 	}
 
 	function setLanguage($language='us') {
+        if($language == 'BR') $language = 'pt_BR';
+        if($language == 'US') $language = 'en';
+
+        $language = $this->listLanguages($language) ? $language : 'en';
+
 		$this->config['OSTLANG'] = $language;
+        $_SESSION['usrLang'] = $language;
 	}
 
 	function getAPIPassphrase(){
