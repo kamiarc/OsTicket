@@ -14,7 +14,7 @@ if(!defined('OSTCLIENTINC') || !is_object($ticket)) die('Kwaheri rafiki!'); //Sa
 </div>
 <div style="margin:5px 100px 100px 0;">
     <?=Format::htmlchars($ticket->getName())?>,<br>
-    <p><?=$trl->translate('TEXT_THANKS_NEW_TICKET')?></p>
+    <p><?=nl2br( htmlentities( strip_tags( str_replace('{email}',$ticket->getEmail(),$trl->translate('TEXT_THANKS_NEW_TICKET')) ),ENT_COMPAT,'utf-8',false ) )?></p>
           
     <?if($cfg->autoRespONNewTicket()){ ?>
     <p><?=$trl->translate('TEXT_NEW_TICKET_AUTO_RESPONSE',$ticket->getEmail())?>

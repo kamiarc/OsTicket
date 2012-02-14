@@ -395,12 +395,20 @@ $LANG['TEXT_SORT_BY_DATE'] = 'Sort By Date';
 $LANG['TEXT_SORT_BY_DEPARTMENT'] = 'Sort By Department';
 $LANG['TEXT_SORT_BY_TICKET_ID'] = 'Sort By Ticket ID';
 $LANG['TEXT_SORT_BY_PRIORITY'] = 'Ordenar pela Prioridade';
-$LANG['TEXT_SUPPORT_TEAM'] = 'Support Tean';
+$LANG['TEXT_SUPPORT_TEAM'] = 'Support Team<br/>Editora Cubo';
 $LANG['TEXT_SUPPORT_CENTER'] = 'Support Center';
 $LANG['TEXT_SUPPORT_TICKET_SISTEM'] = '<span>SUPPORT TICKET</span> SYSTEM';
 $LANG['TEXT_SYSTEM_IS_OFF_LINE'] = '<strong>System is set to offline mode</strong> - Client interface is disabled and ONLY admins can access staff control panel.';
 // TEXT T
-$LANG['TEXT_THANKS_NEW_TICKET'] = 'Thank you for contacting us.<br>A support ticket request has been created and a representative will be getting back to you shortly if necessary.';
+$LANG['TEXT_THANKS_NEW_TICKET'] = '
+<p> Thank you for contacting us.<br />
+ Your ticket has been created and a member of our team will get in contact soon.<br />
+ An e-mail with the ticket details was sent to <strong>{email}</strong>. <br />
+ You gonna need this informations to follow and/or add new information to the ticket.</p>
+<br />
+<hr />
+<br />
+';
 $LANG['TEXT_TICKET_ASSIGNED_TO_STAFF'] = 'Ticket Assigned to {0}';
 $LANG['TEXT_TICKET_CREATED'] = 'Support ticket request created';
 $LANG['TEXT_TICKET_CREATED_SUCCESSFULLY'] = 'Ticket created successfully';

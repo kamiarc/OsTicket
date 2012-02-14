@@ -396,12 +396,22 @@ $LANG['TEXT_SORT_BY_DATE'] = 'Ordenar por Data';
 $LANG['TEXT_SORT_BY_DEPARTMENT'] = 'Ordenar por Departamento';
 $LANG['TEXT_SORT_BY_TICKET_ID'] = 'Ordenar por Número do Ticket';
 $LANG['TEXT_SORT_BY_PRIORITY'] = 'Ordenar pela Prioridade';
-$LANG['TEXT_SUPPORT_TEAM'] = 'Equipe de Atendimento Externo';
+$LANG['TEXT_SUPPORT_TEAM'] = 'Equipe de Atendimento Externo<br />Editora Cubo';
 $LANG['TEXT_SUPPORT_CENTER'] = 'Centro de Suporte FullService';
 $LANG['TEXT_SUPPORT_TICKET_SISTEM'] = 'Sistema FullSErvice de <span>TICKET para Suporte</span>';
 $LANG['TEXT_SYSTEM_IS_OFF_LINE'] = '<strong>O Sistema está definido como desativado (Off-Line)</strong> - A interface com o cliente está desativada e somente os administadores podem acessar o painel de controle.';
 // TEXT T
-$LANG['TEXT_THANKS_NEW_TICKET'] = 'Obrigado por nos contactar.<br>Um ticket para sua requisição foi criado e um de nossos representantes irá retornar para você o mais rapido possível!';
+
+$LANG['TEXT_THANKS_NEW_TICKET'] = '
+<p> Obrigado por entrar em contato.<br />
+ Seu ticket foi criado e um membro de nossa equipe irá analisá-lo em breve. <br />
+ Um e-mail com os dados do chamado foi enviado para <strong>{email}</strong>. <br />
+ Você precisará dessas informações para acompanhar e/ou adicionar novas informações ao chamado.</p>
+<br />
+<hr />
+<br />
+';
+
 $LANG['TEXT_TICKET_ASSIGNED_TO_STAFF'] = 'Ticket Assigned to {0}';
 $LANG['TEXT_TICKET_CREATED'] = 'Ticket para requisição criado!';
 $LANG['TEXT_TICKET_CREATED_SUCCESSFULLY'] = 'Ticket de atendimento criado com sucesso';
