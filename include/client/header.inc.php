@@ -1,5 +1,5 @@
 <?php
-$title=($cfg && is_object($cfg))?$cfg->getTitle():'osTicket :: Support Ticket System';
+$title=($cfg && is_object($cfg))?$cfg->getTitle():'osTicket';
 $trl->sendHeader();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -9,6 +9,7 @@ $trl->sendHeader();
     <title><?=Format::htmlchars($title)?></title>
     <link rel="stylesheet" href="./styles/main.css" media="screen">
     <link rel="stylesheet" href="./styles/colors.css" media="screen">
+    <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body dir="<?php echo $dir; ?>">
 <div id="container">

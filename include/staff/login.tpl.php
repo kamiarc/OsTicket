@@ -9,6 +9,7 @@ $trl->sendHeader();
 <meta name="robots" content="noindex" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="pragma" content="no-cache" />
+<link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body id="loginBody">
 <h1 id="logo"><a href="index.php">osTicket Staff Control Panel</a></h1>

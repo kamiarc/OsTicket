@@ -10,7 +10,8 @@ if(defined('AUTO_REFRESH') && is_numeric(AUTO_REFRESH_RATE) && AUTO_REFRESH_RATE
 echo '<meta http-equiv="refresh" content="'.AUTO_REFRESH_RATE.'" />';
 }
 ?>
-<title>osTicket :: Staff Control Panel</title>
+<title>Editora Cubo Helpdesk :: Staff Control Panel</title>
+
 <link rel="stylesheet" href="css/main.css" media="screen">
 <link rel="stylesheet" href="css/style.css" media="screen">
 <link rel="stylesheet" href="css/tabs.css" type="text/css">
@@ -24,6 +25,7 @@ echo '<meta http-equiv="refresh" content="'.AUTO_REFRESH_RATE.'" />';
 if($cfg && $cfg->getLockTime()) { //autoLocking enabled.?>
 <script type="text/javascript" src="js/autolock.js" charset="utf-8"></script>
 <?}?>
+<link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body>
 <?php

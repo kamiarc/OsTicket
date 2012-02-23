@@ -306,7 +306,7 @@ $LANG['TEXT_ATTACH_FILE'] = 'Attach File';
 $LANG['TEXT_AUTHENTICATION_REQUIRED'] = 'Authentication Required';
 $LANG['TEXT_AUTHENTICATION_REQUIRED_QUESTION'] = 'Authentication Required?';
 // TEXT B
-$LANG['TEXT_BOX_NEW_TICKET'] = 'Submit a new support request. Please provide as much detail as possible so we can best assist you. To update a previously submitted ticket, please use the form to the right. A valid email address is required.';
+$LANG['TEXT_BOX_NEW_TICKET'] = 'Click que button below, enter your e-mail address and please provide as much detail as you can so we may better assist you. To track or update a previously submitted ticket, please use the form to the right. ';
 // TEXT C
 $LANG['TEXT_CAM_BE_APPENDED_TO_RESPONSES'] = 'can be appended to responses.&nbsp;(available as a choice for public departments)';
 $LANG['TEXT_CLOSED_TICKETS'] = 'Closed Tickets';
@@ -356,7 +356,7 @@ $LANG['TEXT_NO_TICKETS_FOUND'] = 'NO tickets found.';
 // TEXT O
 $LANG['TEXT_OPEN'] = 'Open';
 $LANG['TEXT_OPEN_NEW_TICKET'] = 'Open new Ticket';
-$LANG['TEXT_OPEN_PREVIOUS_TICKET'] = 'Check status of previously opened ticket. we provide archives and history of all your support requests complete with responses.';
+$LANG['TEXT_OPEN_PREVIOUS_TICKET'] = 'To track your tickets history or update a previously submitted ticket, please use the form below. ';
 //$LANG['TEXT_OPEN_STATS']
 $LANG['TEXT_OPEN_TICKETS'] = 'Open Tickets';
 $LANG['TEXT_OF_SELECTED_TICKETS_REOPENED'] = "{0} of {1} selected tickets reopened";
@@ -444,17 +444,17 @@ $LANG['TEXT_WELCOME_BACK'] = 'Welcome back';
 $LANG['TEXT_WELCOME_BACK_CLIENT'] = 'Welcome back, <strong>{0}</strong>';
 $LANG['TEXT_WELCOME_BACK_STAFF'] = 'Welcome back, <strong>{0}</strong>';
 $LANG['TEXT_WELCOME_BACK_VACATION']= 'Welcome back! You are listed as \'on vacation\' Please let admin or your manager know that you are back.';
-$LANG['TEXT_WELCOME_MSG'] = 'In order to streamline support requests and better serve you, we utilize a support ticket system. Every support request is assigned a unique ticket number which you can use to track the progress and responses online. For your reference we provide complete archives and history of all your support requests.';
-$LANG['TEXT_WELCOME_TITLE'] = 'Welcome to the support center.';
+$LANG['TEXT_WELCOME_MSG'] = 'In order to better serve you we will use this online system to open and track your requests (tickets). It is very easy an requires no registration at all, only your email address!';
+$LANG['TEXT_WELCOME_TITLE'] = 'Welcome';
 
 ########
 ## Titles on pages and web pages
 ##
 $LANG['TITLE'] = 'Tickets FullService';
-$LANG['TITLE_BOX_NEW_TICKET'] = 'New Ticket';
+$LANG['TITLE_BOX_NEW_TICKET'] = 'Open A New Ticket';
 $LANG['TITLE_BAR_OFFLINE'] = 'Support Ticket System';
 $LANG['TITLE_MY_PREFERENCES'] = 'My Preferences';
 $LANG['TITLE_OFFLINE'] = 'Support Ticket System Offline';
-$LANG['TITLE_OPEN_PREVIOUS_TICKET'] = 'Open Previous Ticket';
+$LANG['TITLE_OPEN_PREVIOUS_TICKET'] = 'Check Ticket Status';
 $LANG['TITLE_CLOSED_TICKETS'] = 'Closed Tickets';
 ?>

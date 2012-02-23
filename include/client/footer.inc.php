@@ -3,7 +3,7 @@
  </div>
 
 </div>
-<div align="center">
+<div align="center" style="width:800px; margin:auto;">
 <ul style="list-style: none; margin: 0;"><?
         $dir = "translate";
         if (is_dir($dir)) {
@@ -15,7 +15,7 @@
             }
         }
         foreach($langs as $k => $v){
-            echo "   <li style='display: inline;'><a href='?setLang=".$k."'>".$v."</a></li> &nbsp;  ";
+            echo "   <li style='display: inline; float:right; margin-left:1px; margin-top:5px;'><a href='?setLang=".$k."'>".$v."</a></li> &nbsp;  ";
         }
 ?></ul></div>
 </body>

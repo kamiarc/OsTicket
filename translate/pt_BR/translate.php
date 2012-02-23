@@ -274,7 +274,7 @@ $LANG["LABEL_SYSTEM_SETTINGS"] = 'Configurações do sistema';
 $LANG['LABEL_TELEPHONE'] = 'Telefone';
 $LANG['LABEL_TICKET'] = 'Atendimento';
 $LANG['LABEL_TICKET_ID'] = 'ID do Atendimento';
-$LANG['LABEL_TICKET_NUMBER'] = 'Num. do Atendimento';
+$LANG['LABEL_TICKET_NUMBER'] = 'Ticket#';
 $LANG['LABEL_TICKET_SOURCE'] = 'Origem do Atendimento';
 $LANG['LABEL_TICKET_STATUS'] = 'Situação do Atendimento';
 $LANG['LABEL_TO'] = 'Até';
@@ -306,7 +306,7 @@ $LANG['TEXT_ATTACH_FILE'] = 'Anexe seu arquivo';
 $LANG['TEXT_AUTHENTICATION_REQUIRED'] = 'Autenticação Obrigatória';
 $LANG['TEXT_AUTHENTICATION_REQUIRED_QUESTION'] = 'É necessário autenticação?';
 // TEXT B
-$LANG['TEXT_BOX_NEW_TICKET'] = 'Envie uma nova requisição de suporte. Por favor informe o máximo de detalhes possível, para que nos possamos melhor lhe atender. Você pode atualizar um ticket já enviado, por favor use o formulário a direita. Um e-mail válido é obrigatório.';
+$LANG['TEXT_BOX_NEW_TICKET'] = 'Clique no botão abaixo, forneça seu endereço de email e o máximo de detalhes para que possamos auxilia-lo da melhor forma possível. Para acompanhar ou atualizar um ticket já aberto utilize o formulário à direita.';
 // TEXT C
 $LANG['TEXT_CAM_BE_APPENDED_TO_RESPONSES'] = 'Pode ser adicionado a respostas do departamento.<br/>(Disponível como uma opção para departamentos de acesso ao publico)';
 $LANG['TEXT_CLOSED_TICKETS'] = 'Tickets Fechados';
@@ -356,7 +356,7 @@ $LANG['TEXT_NO_TICKETS_FOUND'] = 'Nenhum ticket encontrado.';
 // TEXT O
 $LANG['TEXT_OPEN'] = 'Aberto';
 $LANG['TEXT_OPEN_NEW_TICKET'] = 'Abrir novo Ticket';
-$LANG['TEXT_OPEN_PREVIOUS_TICKET'] = 'Verificar o status de um Ticket criado anteriormente. É mantido um histórico e arquivo de todos as requisições de suporte com suas respostas.';
+$LANG['TEXT_OPEN_PREVIOUS_TICKET'] = 'Verificar o status de um Ticket criado anteriormente. É mantido um histórico e arquivo de todos as requisições de suporte com suas ';
 $LANG['TEXT_OPEN_STATS'] = 'Abertos ({0})' ;
 $LANG['TEXT_OPEN_TICKETS'] = 'Tickets Abertos';
 $LANG['TEXT_OF_SELECTED_TICKETS_CLOSED'] = "{0} de {1} atendimentos selecionados foram fechados";
@@ -444,18 +444,18 @@ $LANG['TEXT_WELCOME_BACK'] = 'Bem Vindo';
 $LANG['TEXT_WELCOME_BACK_CLIENT'] = 'Bem Vindo, <strong>{0}</strong>';
 $LANG['TEXT_WELCOME_BACK_STAFF'] = 'Bem Vindo, <strong>{0}</strong>';
 $LANG['TEXT_WELCOME_BACK_VACATION']= 'Vem vindo de volta! Você está na lista dos \"profissionais de ferias\", por favor, permita ao admin ou gerente tomar conhecimento que você voltou.';
-$LANG['TEXT_WELCOME_MSG'] = 'Para podermos lhe dar o melhor atendimento usamos um sistema de tickets. Cada requisição de suporte é associada a um único número de atendimento (Ticket) que você pode usar para observar o progresso de seu atendimento rapidamente. Para sua referência nós oferecemos um arquivo completo com o histórico de todas as suas requisições.';
-$LANG['TEXT_WELCOME_TITLE'] = 'Bem Vindo ao Centro de Suporte';
+$LANG['TEXT_WELCOME_MSG'] = 'Para melhor atendê-lo utilizaremos esta ferramenta online para agilizar a abertura e acompanhamento de suas solicitações (tickets). É muito simples e não requer cadastro, apenas seu endereço de e-mail!';
+$LANG['TEXT_WELCOME_TITLE'] = 'Bem Vindo';
 
 ########
 ## Titles on pages and web pages
 ##
 $LANG['TITLE'] = 'Tickets FullService';
-$LANG['TITLE_BOX_NEW_TICKET'] = 'Novo Ticket';
+$LANG['TITLE_BOX_NEW_TICKET'] = 'Abra um novo Ticket';
 $LANG['TITLE_BAR_OFFLINE'] = 'Sistema de Ticket para Suporte';
 $LANG['TITLE_MY_PREFERENCES'] = 'Minhas Preferências';
 $LANG['TITLE_OFFLINE'] = 'Sistema de ticket para Suporte está Offline';
-$LANG['TITLE_OPEN_PREVIOUS_TICKET'] = 'Abrir ticket existente';
+$LANG['TITLE_OPEN_PREVIOUS_TICKET'] = 'Verifique o status do Ticket';
 $LANG['TITLE_CLOSED_TICKETS'] = 'Atendimentos Finalizados';
 
 $LANG['Displaying'] = 'Teste de mostrando';
