@@ -114,11 +114,11 @@ if(!strcasecmp($cfg->getVersion(),VERSION)) {
             $sql='SELECT tpl_id,ticket_autoresp_body,message_autoresp_body,ticket_overlimit_body,ticket_reply_body FROM '.PREFIX.'email_template';
             if(($result=db_query($sql)) && db_num_rows($result)) {
                 while($row=db_fetch_array($result)) {
-                    $ticket_reply=str_replace('%message','%response',str_replace('view.php','tickets.php',$row['ticket_reply_body']));
+                    $ticket_reply=str_replace('%message','%response',str_replace('tickets.php','tickets.php',$row['ticket_reply_body']));
                     $sql='UPDATE '.PREFIX.'email_template SET updated=NOW() '.
-                         ',ticket_autoresp_body='.db_input(str_replace('view.php','tickets.php',$row['ticket_autoresp_body'])).
-                         ',message_autoresp_body='.db_input(str_replace('view.php','tickets.php',$row['message_autoresp_body'])).
-                         ',ticket_overlimit_body='.db_input(str_replace('view.php','tickets.php',$row['ticket_overlimit_body'])).
+                         ',ticket_autoresp_body='.db_input(str_replace('tickets.php','tickets.php',$row['ticket_autoresp_body'])).
+                         ',message_autoresp_body='.db_input(str_replace('tickets.php','tickets.php',$row['message_autoresp_body'])).
+                         ',ticket_overlimit_body='.db_input(str_replace('tickets.php','tickets.php',$row['ticket_overlimit_body'])).
                          ',ticket_reply_body='.db_input($ticket_reply).
                          ' WHERE tpl_id='.db_input($row['tpl_id']);
                     db_query($sql);
@@ -170,7 +170,7 @@ if(!strcasecmp($cfg->getVersion(),VERSION)) {
                 //Update
                 $sql='UPDATE '.PREFIX.'email_template SET updated=NOW() '.
                      ',ticket_notice_subj = "[#%ticket] %subject"'.
-                     ',ticket_notice_body = "%name,\r\n\r\nOur customer care team personnel has created a ticket #%ticket on your behalf, with the following message;\r\n\r\n%message\r\n\r\nIf you wish to provide additional comments or information regarding this issue, please don\'t open a new ticket. You can update or view this ticket\'s progress online here: %url/view.php?e=%email&t=%ticket.\r\n\r\n%signature"';
+                     ',ticket_notice_body = "%name,\r\n\r\nOur customer care team personnel has created a ticket #%ticket on your behalf, with the following message;\r\n\r\n%message\r\n\r\nIf you wish to provide additional comments or information regarding this issue, please don\'t open a new ticket. You can update or view this ticket\'s progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\n%signature"';
                     db_query($sql);
             }
         }

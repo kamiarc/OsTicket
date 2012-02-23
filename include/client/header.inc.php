@@ -10,6 +10,9 @@ $trl->sendHeader();
     <link rel="stylesheet" href="./styles/main.css" media="screen">
     <link rel="stylesheet" href="./styles/colors.css" media="screen">
     <link rel="shortcut icon" href="favicon.ico" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 </head>
 <body dir="<?php echo $dir; ?>">
 <div id="container">

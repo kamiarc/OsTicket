@@ -321,7 +321,7 @@ $LANG['TEXT_DEPT_UPDATED_SUCCESSFULLY'] = 'Departamento atualizado com sucesso!'
 $LANG['TEXT_EMAIL_ADDED_TO_BANLIST'] = 'Email ({0}) Adicionado a lista de banidos';
 $LANG['TEXT_EMAIL_ADDRESS_USED_SEND_AUTO_RESPONSES'] = 'Endereço de E-mail usado para enviar auto-respostas, se abilitado.';
 $LANG['TEXT_EMAIL_REMOVED_FROM_BANLIST'] = 'Email removido da lista de banidos';
-$LANG['TEXT_ENTER_MESSAGE'] = 'Entre sua mensagem';
+$LANG['TEXT_ENTER_MESSAGE'] = 'Digite sua mensagem';
 $LANG['TEXT_EXCESSIVE_FAILED_LOGIN_ATTEMPTS'] = 'Excessivas Tentativas de Login';
 $LANG['TEXT_EXCESSIVE_LOGIN_ATTEMPTS_BY_CLIENT'] = 'Excessivas tentativas de Login (cliente)';
 // TEXT F
@@ -342,7 +342,7 @@ $LANG['TEXT_INVALID_LOGIN'] = 'Login Inválido';
 // TEXT L
 $LANG['TEXT_LOGIN_VIEW_STATUS_OF_TICKET']='Para visualizar o status de um ticket, forneça as informações de login abaixo.<br/>'.
         'Se este for seu primeiro contato ou se você perdeu o número do seu ticket, por favor <a href="open.php">clique aqui</a> para abrir um novo ticket.';
-$LANG['TEXT_LOG_OUT'] = 'Log Out';
+$LANG['TEXT_LOG_OUT'] = 'Sair';
 // TEXT M
 $LANG['TEXT_MESSAGE_POSTED_SUCCESSFULLY'] = 'Mensagem enviada com sucesso'; 
 $LANG['TEXT_MY_ACCOUNT'] = 'Minha Conta';
@@ -459,6 +459,35 @@ $LANG['TITLE_OPEN_PREVIOUS_TICKET'] = 'Verifique o status do Ticket';
 $LANG['TITLE_CLOSED_TICKETS'] = 'Atendimentos Finalizados';
 
 $LANG['Displaying'] = 'Teste de mostrando';
+
+$LANG['CAPTCHA_ERROR'] = 'Verifique os caracteres digitados e tente novamente.';
+$LANG['CAPTCHA_TEXT'] = 'Texto de Segurança';
+$LANG['CAPTCHA_DESC'] = 'Digite os caracteres mostrados na imagem.';
+
+########
+## Topics and Departments
+##
+$LANG['TOPIC_BILLING'] = 'Cobranças';
+$LANG['TOPIC_DISPLAYING'] = 'Visualização';
+$LANG['TOPIC_SUPPORT'] = 'Suporte';
+$LANG['TOPIC_TESTING'] = 'Teste';
+$LANG['SUPPORT'] = 'Suporte';
+$LANG['DISPLAYING'] = 'Visualização';
+
+########
+## Interface
+##
+$LANG['BTN_VIEW_OPEN'] = 'images/view_open_btn_br.gif';
+$LANG['BTN_VIEW_CLOSED'] = 'images/view_closed_btn_br.gif';
+$LANG['BTN_REFRESH'] = 'images/refresh_btn_br.gif';
+
+$LANG['TICKETS'] = 'Tickets';
+$LANG['ALL_TICKETS'] = 'Tickets (Todos)';
+$LANG['OPEN_TICKETS'] = 'Tickets Abertos';
+$LANG['CLOSED_TICKETS'] = 'Tickets Fechados';
+$LANG['OPEN'] = 'Aberto';
+$LANG['CLOSED'] = 'Fechado';
+
 
 
 ?>

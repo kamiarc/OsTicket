@@ -20,7 +20,7 @@ $inc='open.inc.php';    //default include.
 $errors=array();
 if($_POST):
     $_POST['deptId']=$_POST['emailId']=0; //Just Making sure we don't accept crap...only topicId is expected.
-    if($cfg->enableCaptcha()){
+    if($cfg->enableCaptcha() && (!$thisclient || !$thisclient->isValid())){
         if(!$_POST['captcha'])
             $errors['captcha']='Enter text shown on the image';
         elseif(strcmp($_SESSION['captcha'],md5($_POST['captcha'])))
@@ -37,7 +37,6 @@ if($_POST):
         $errors['err']=$errors['err']?$errors['err']:$trl->translate('TEXT_UNABLE_CREATE_TICKET');
     }
 endif;
-
 //page
 require(CLIENTINC_DIR.'header.inc.php');
 require(CLIENTINC_DIR.$inc);

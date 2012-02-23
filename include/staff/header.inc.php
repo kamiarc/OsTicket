@@ -35,7 +35,7 @@ if($sysnotice){?>
 }?>
 <div id="container">
     <div id="header">
-        <a id="logo" href="index.php" title="osTicket"><img src="images/ostlogo.jpg" width="188" height="72" alt="osTicket"></a>
+        <a id="logo" href="index.php" title="osTicket"><img src="images/logo-cubo.png"  alt="osTicket"></a>
         <p id="info"><?php echo $trl->translate('TEXT_WELCOME_BACK_STAFF',$thisuser->getUsername()); ?> 
            <?php
             if($thisuser->isAdmin() && !defined('ADMINPAGE')) { ?>

@@ -72,6 +72,11 @@ th {
     overflow:none;
   }
 
+    .flagDisabled{
+        cursor: default !important;
+        opacity: 0.25;
+    }
+
     #logo { 
       width:222px;
       height:64px;

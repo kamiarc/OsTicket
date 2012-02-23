@@ -12,17 +12,17 @@ $dept=($dept && $dept->isPublic())?$dept:$cfg->getDefaultDept();
 ?>
 <table width="100%" cellpadding="1" cellspacing="0" border="0">
     <tr><td colspan=2 width=100% class="msg"><?= $trl->translate('TEXT_TICKET_NUMBER')?> <?=$ticket->getExtId()?> 
-        &nbsp;<a href="view.php?id=<?=$ticket->getExtId()?>" title="Reload"><span class="Icon refresh">&nbsp;</span></a></td></tr> 
+        &nbsp;<a href="tickets.php?id=<?=$ticket->getExtId()?>" title="Reload"><span class="Icon refresh">&nbsp;</span></a></td></tr> 
     <tr>
        <td width=50%>	
         <table align="center" class="infotable" cellspacing="1" cellpadding="3" width="100%" border=0>
 	        <tr>
 				<th width="100" ><?= $trl->translate('LABEL_TICKET_NUMBER')?>:</th>
-				<td><?=$ticket->getStatus()?></td>
+				<td><?=$ticket->getExtId()?></td>
 			</tr>
             <tr>
-                <th><?= $trl->translate('LABEL_DEPARTMENT')?>:</th>
-                <td><?=Format::htmlchars($dept->getName())?></td>
+                <th><?=$trl->translate('LABEL_DEPARTMENT')?>:</th>
+                <td><?=$trl->translate(Format::htmlchars($dept->getName()))?></td>
             </tr>
 			<tr>
                 <th><?= $trl->translate('LABEL_CREATE_DATE')?>:</th>
@@ -46,6 +46,14 @@ $dept=($dept && $dept->isPublic())?$dept:$cfg->getDefaultDept();
             </tr>
         </table>
        </td>
+    </tr>
+    <tr>
+        <table align="center" class="infotable" cellspacing="1" cellpadding="3" width="100%" border=0>
+            <tr>
+                <th width="100"><?= $trl->translate('LABEL_STATUS')?>:</th>
+                <td><?=$trl->translate($ticket->getStatus())?></td>
+            </tr>
+        </table>
     </tr>
 </table>
 <div class="msg"><?= $trl->translate('LABEL_SUBJECT')?>: <?=Format::htmlchars($ticket->getSubject())?></div>
@@ -119,7 +127,7 @@ $dept=($dept && $dept->isPublic())?$dept:$cfg->getDefaultDept();
         <?if($ticket->isClosed()) {?>
         <div class="msg"><?= $trl->translate('TEXT_TICKET_WILL_REOPEN_NEW_POST')?></div>
         <?}?>
-        <form action="view.php?id=<?=$id?>#reply" name="reply" method="post" enctype="multipart/form-data">
+        <form action="tickets.php?id=<?=$id?>#reply" name="reply" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?=$ticket->getExtId()?>">
             <input type="hidden" name="respid" value="<?=$respID?>">
             <input type="hidden" name="a" value="postmessage">
@@ -136,7 +144,7 @@ $dept=($dept && $dept->isPublic())?$dept:$cfg->getDefaultDept();
             <div align="left"  style="padding:10px 0 10px 0;">
                 <input class="button" type='submit' value='<?= $trl->translate('LABEL_POST_REPLY')?>' />
                 <input class="button" type='reset' value='<?= $trl->translate('LABEL_RESET')?>' />
-                <input class="button" type='button' value='<?= $trl->translate('LABEL_CANCEL')?>' onClick='window.location.href="view.php"' />
+                <input class="button" type='button' value='<?= $trl->translate('LABEL_CANCEL')?>' onClick='window.location.href="tickets.php"' />
             </div>
         </form>
     </div>

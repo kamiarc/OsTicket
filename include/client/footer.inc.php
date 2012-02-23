@@ -15,7 +15,7 @@
             }
         }
         foreach($langs as $k => $v){
-            echo "   <li style='display: inline; float:right; margin-left:1px; margin-top:5px;'><a href='?setLang=".$k."'>".$v."</a></li> &nbsp;  ";
+            echo "   <li style='display: inline; float:right; margin-left:1px; margin-top:5px;'><a ".( ($_SESSION['usrLang'] == $k) ? "class = 'flagDisabled'" : "")." href='?setLang=".$k."'>".$v."</a></li> &nbsp;  ";
         }
 ?></ul></div>
 </body>

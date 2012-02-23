@@ -457,4 +457,13 @@ $LANG['TITLE_MY_PREFERENCES'] = 'My Preferences';
 $LANG['TITLE_OFFLINE'] = 'Support Ticket System Offline';
 $LANG['TITLE_OPEN_PREVIOUS_TICKET'] = 'Check Ticket Status';
 $LANG['TITLE_CLOSED_TICKETS'] = 'Closed Tickets';
+
+$LANG['CAPTCHA_ERROR'] = 'Wrong Captcha text, please try again.';
+$LANG['CAPTCHA_TEXT'] = 'Captcha Text';
+$LANG['CAPTCHA_DESC'] = 'Type the text shown on the image.';
+
+$LANG['BTN_VIEW_OPEN'] = 'images/view_open_btn.gif';
+$LANG['BTN_VIEW_CLOSED'] = 'images/view_closed_btn.gif';
+$LANG['BTN_REFRESH'] = 'images/refresh_btn.gif';
+
 ?>

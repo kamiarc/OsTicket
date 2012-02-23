@@ -3,6 +3,13 @@ if(!defined('OSTCLIENTINC') || !is_object($thisclient) || !$thisclient->isValid(
 
 global $trl; 
 
+function getOrder($type){
+    if($_GET['sort']==$type){
+        echo ($_GET['order'] == 'ASC') ? ' <img src="images/asc.png" class="orderer"/>' : ' <img src="images/desc.png" class="orderer"/>';
+    }
+}
+
+
 //Get ready for some deep shit.
 $qstr='&'; //Query string collector
 $status=null;
@@ -52,7 +59,7 @@ $qfrom=' FROM '.TICKET_TABLE.' ticket LEFT JOIN '.DEPT_TABLE.' dept ON ticket.de
 //Pagenation stuff....wish MYSQL could auto pagenate (something better than limit)
 $total=db_count('SELECT count(*) '.$qfrom.' '.$qwhere);
 $pageNav=new Pagenate($total,$page,$pagelimit,$trl);
-$pageNav->setURL('view.php',$qstr.'&sort='.urlencode($_REQUEST['sort']).'&order='.urlencode($_REQUEST['order']));
+$pageNav->setURL('tickets.php',$qstr.'&sort='.urlencode($_REQUEST['sort']).'&order='.urlencode($_REQUEST['order']));
 
 //Ok..lets roll...create the actual query
 $qselect.=' ,count(attach_id) as attachments ';
@@ -62,7 +69,7 @@ $query="$qselect $qfrom $qwhere $qgroup ORDER BY $order_by $order LIMIT ".$pageN
 //echo $query;
 $tickets_res = db_query($query);
 $showing=db_num_rows($tickets_res)?$pageNav->showing():"";
-$results_type=($status)?ucfirst($status).' Tickets':' All Tickets';
+$results_type=($status)?$trl->translate(ucfirst($status).' Tickets'):$trl->translate('ALL_TICKETS');
 $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
 ?>
 <div>
@@ -77,11 +84,11 @@ $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
 <div style="margin: 10px 0 60px 0;">
  <table width="100%" border="0" cellspacing=0 cellpadding=0 align="center">
     <tr>
-        <td width="60%" class="msg"><?=$showing?>&nbsp;&nbsp;<?=$results_type?></td>
+        <td width="60%" class="msg"><?=$showing?> <?=$results_type?></td>
         <td nowrap >
-            <a href="view.php?status=open"><img src="images/view_open_btn.gif" alt="<?= $trl->translate('TEXT_VIEW_OPEN')?>" border=0></a>            
-            <a href="view.php?status=closed"><img src="images/view_closed_btn.gif" alt="<?= $trl->translate('TEXT_VIEW_CLOSED')?>" border=0></a>            
-            <a href=""><img src="<?php tei('IMAGE_STAFF_REFRESH')?>" alt="<?= $trl->translate('TEXT_REFRESH')?>" border=0></a>
+            <a href="tickets.php?status=open"><img src="<?=$trl->translate('BTN_VIEW_OPEN')?>" alt="<?= $trl->translate('TEXT_VIEW_OPEN')?>" border=0></a>            
+            <a href="tickets.php?status=closed"><img src="<?=$trl->translate('BTN_VIEW_CLOSED')?>" alt="<?= $trl->translate('TEXT_VIEW_CLOSED')?>" border=0></a>            
+            <a href=""><img src="<?=$trl->translate('BTN_REFRESH')?>" alt="<?= $trl->translate('TEXT_REFRESH')?>" border=0></a>
         </td>
     </tr>
  </table>
@@ -90,13 +97,13 @@ $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
      <table border="0" cellspacing=0 cellpadding=2 class="tgrid" align="center">
         <tr>
 	        <th width="70" nowrap>
-                <a href="view.php?sort=ID&order=<?=$negorder?><?=$qstr?>" title="<?= $trl->translate('TEXT_SORT_BY_TICKET_ID')?> <?=$negorder?>"><?= $trl->translate('LABEL_TICKET_NUMBER')?></a></th>
+                <a href="tickets.php?sort=ID&order=<?=$negorder?><?=$qstr?>" title="<?= $trl->translate('TEXT_SORT_BY_TICKET_ID')?> <?=$negorder?>"><?= $trl->translate('LABEL_TICKET_NUMBER')?> <?=getOrder('ID');?> </a></th>
 	        <th width="100">
-                <a href="view.php?sort=date&order=<?=$negorder?><?=$qstr?>" title="<?= $trl->translate('TEXT_SORT_BY_DATE')?> <?=$negorder?>"><?= $trl->translate('LABEL_CREATE_DATE')?></a></th>
+                <a href="tickets.php?sort=date&order=<?=$negorder?><?=$qstr?>" title="<?= $trl->translate('TEXT_SORT_BY_DATE')?> <?=$negorder?>"><?= $trl->translate('LABEL_CREATE_DATE')?> <?=getOrder('date');?> </a></th>
             <th width="60"><?= $trl->translate('LABEL_TICKET_STATUS')?></th>
             <th width="240"><?= $trl->translate('LABEL_SUBJECT')?></th>
             <th width="150">
-                <a href="view.php?sort=dept&order=<?=$negorder?><?=$qstr?>" title="<?= $trl->translate('TEXT_SORT_BY_DEPARTMENT')?> <?=$negorder?>"><?= $trl->translate('LABEL_DEPARTMENT')?></a></th>
+                <a href="tickets.php?sort=dept&order=<?=$negorder?><?=$qstr?>" title="<?= $trl->translate('TEXT_SORT_BY_DEPARTMENT')?> <?=$negorder?>"><?= $trl->translate('LABEL_DEPARTMENT')?> <?=getOrder('dept');?> </a></th>
             <th width="150"><?= $trl->translate('LABEL_EMAIL')?></th>
         </tr>
         <?
@@ -114,14 +121,14 @@ $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
                 }
                 ?>
             <tr class="<?=$class?> " id="<?=$row['ticketID']?>">
-                <td align="center" title="<?=$row['email']?>" nowrap>
-                    <a class="Icon <?=strtolower($row['source'])?>Ticket" title="<?=$row['email']?>" href="view.php?id=<?=$row['ticketID']?>">
+                <td align="center" title="<?=$row['email']?>" nowrap="nowrap" <?=($row['status'] == 'open') ? 'style="background: #CFC;"' : 'style="background: #FBB;"'?>>
+                    <a class="Icon <?=strtolower($row['source'])?>Ticket" title="<?=$row['email']?>" href="tickets.php?id=<?=$row['ticketID']?>">
                         <?=$ticketID?></a></td>
                 <td nowrap>&nbsp;<?=Format::db_date($row['created'])?></td>
-                <td>&nbsp;<?=ucfirst($row['status'])?></td>
-                <td>&nbsp;<a href="view.php?id=<?=$row['ticketID']?>"><?=$subject?></a>
+                <td>&nbsp;<?=$trl->translate(ucfirst($row['status']))?></td>
+                <td>&nbsp;<a href="tickets.php?id=<?=$row['ticketID']?>"><?=$subject?></a>
                     &nbsp;<?=$row['attachments']?"<span class='Icon file'>&nbsp;</span>":''?></td>
-                <td nowrap>&nbsp;<?=Format::truncate($dept,30)?></td>
+                <td nowrap>&nbsp;<?=Format::truncate($trl->translate($dept),30)?></td>
                 <td>&nbsp;<?=Format::truncate($row['email'],40)?></td>
             </tr>
             <?
