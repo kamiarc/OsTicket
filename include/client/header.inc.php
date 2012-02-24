@@ -17,7 +17,7 @@ $trl->sendHeader();
 <body dir="<?php echo $dir; ?>">
 <div id="container">
     <div id="header">
-        <a id="logo" href="index.php" title="<?= $trl->translate('TEXT_SUPPORT_CENTER'); ?>"><img src="./images/logo-cubo.jpg" border=0 alt="Support Center"></a>
+        <a id="logo" href="index.php" title="<?= $trl->translate('TEXT_SUPPORT_CENTER'); ?>"><img src="./images/logo-cubo.png" border=0 alt="Support Center"></a>
     </div>
     <ul id="nav">
          <?                    
