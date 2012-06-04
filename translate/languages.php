@@ -8,7 +8,7 @@ $LANG['EN_NAME'] = '<img src="images/flag_uk.gif" />';
 //$LANG['AR_NAME'] = 'Arabic';
 //$LANG['CA_NAME'] = 'Català';
 //$LANG['CS_NAME'] = 'Czech';
-$LANG['ES_NAME'] = '<img src="images/flag_es.gif" />';
+//$LANG['ES_NAME'] = '<img src="images/flag_es.gif" />';
 //$LANG['FR_NAME'] = 'Français ';
 //$LANG['IT_NAME'] = 'Italiano';
 //$LANG['NL_NAME'] = 'Dutch';
